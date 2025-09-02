@@ -1,6 +1,7 @@
 # Daily-Task-Organizer
 # 📝 Daily Planner- App
 Let's think something Affective and add in our Daily Task
+
 Organize your **daily schedule and tasks** effortlessly with this simple yet powerful **Flask-based To-Do & Scheduler App**.  
 Stay productive, track your tasks, and never miss a deadline again! 🚀  
 
