@@ -1,0 +1,232 @@
+/* ===============================
+   Global Styles
+================================= */
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #f8fafc, #e0f2fe);
+    color: #1f2937;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+}
+
+/* Links */
+a {
+    transition: color 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+a:hover {
+    color: #2563eb; /* blue-600 */
+    transform: scale(1.05);
+}
+
+/* ===============================
+   Header & Footer
+================================= */
+header {
+    background: linear-gradient(90deg, #2563eb, #1e40af);
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+header h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+header nav a {
+    color: white;
+    margin-left: 1rem;
+    font-weight: 500;
+}
+header nav a:hover {
+    color: #facc15; /* yellow-400 */
+}
+
+footer {
+    background: linear-gradient(90deg, #1e40af, #2563eb);
+    color: white;
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+/* ===============================
+   Flash Messages
+================================= */
+.flash {
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    animation: fadeIn 0.5s ease-in-out;
+}
+.flash.success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #10b981;
+}
+.flash.error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #ef4444;
+}
+.flash.warning {
+    background-color: #fef9c3;
+    color: #92400e;
+    border: 1px solid #facc15;
+}
+
+/* ===============================
+   Login Page
+================================= */
+.login-box {
+    max-width: 400px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    animation: fadeIn 0.7s ease-in-out;
+}
+.login-box h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: #1e3a8a;
+}
+.login-box .form-group {
+    margin-bottom: 1rem;
+}
+.login-box label {
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+.login-box input[type="text"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+.login-box input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.3);
+}
+.login-box input[type="submit"] {
+    width: 100%;
+    padding: 0.75rem;
+    background: linear-gradient(90deg, #2563eb, #1e40af);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.login-box input[type="submit"]:hover {
+    background: linear-gradient(90deg, #1e40af, #2563eb);
+    transform: scale(1.02);
+}
+
+/* ===============================
+   Tasks Page
+================================= */
+.task-wrapper {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    animation: fadeIn 0.7s ease-in-out;
+}
+.task-wrapper h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #1e3a8a;
+}
+.task-wrapper form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+.task-wrapper input[type="text"] {
+    flex-grow: 1;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+.task-wrapper input[type="text"]:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 2px rgba(37,99,235,0.3);
+}
+.task-wrapper button {
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(90deg, #16a34a, #15803d);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.task-wrapper button:hover {
+    background: linear-gradient(90deg, #15803d, #16a34a);
+    transform: scale(1.05);
+}
+.task-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f9fafb;
+    padding: 0.8rem 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: all 0.3s ease-in-out;
+}
+.task-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.task-card a {
+    font-size: 0.875rem;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+.task-card a:first-child {
+    color: #16a34a; /* green */
+}
+.task-card a:first-child:hover {
+    text-decoration: underline;
+}
+.task-card a:last-child {
+    color: #dc2626; /* red */
+}
+.task-card a:last-child:hover {
+    text-decoration: underline;
+}
+.task-empty {
+    text-align: center;
+    color: #6b7280;
+    font-style: italic;
+    margin-top: 1rem;
+}
+
+/* ===============================
+   Animations
+================================= */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
