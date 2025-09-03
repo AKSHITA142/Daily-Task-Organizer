@@ -1,4 +1,4 @@
-{% entends "base.html" %}
+{% extends "base.html" %}
 {% block title %}Login{% endblock %}
 
 {% block content %}
@@ -9,7 +9,7 @@
             Username:<input type="text" name="username" id="username" required>
         </div>
         <div class="form-group">
-            Password:<input type="text" name="password" id="password" required>
+            Password:<input type="password" name="password" id="password" required>
         </div>
         <div class="form-group">
             <input type="submit" value="Login" required>

@@ -10,38 +10,38 @@
     </form>
 
     {% if tasks %}
-    <form method="POST" action="{{url_for('tasks.clecr_tasks')}}">
-        <button type="submit" class="btn btn-clear">Clear All Tasks</button>
-    </form>
-<br>
-<table class=task-table>
-    <thead>
-        <tr>
-            <th>Task</th>
-            <th>Status</th>
-            <th>Change</th>
-        </tr>
-    </thead>
-    <tbody>
+        <form method="POST" action="{{url_for('tasks.clear_tasks')}}">
+            <button type="submit" class="btn btn-clear">Clear All Tasks</button>
+        </form>
+        <br>
+        <table class="task-table">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Status</th>
+                    <th>Change</th>
+                </tr>
+            </thead>
+        <tbody>
         {% for task in tasks %}
         <tr>
             <td>{{loop.index}}</td>
-            <td>{{loop.title}}</td>
+            <td>{{task.title}}</td>
             <td>
+                <!--task.status ->badge pending/badge compete only is only for to gave css effect-->
                 <span class="badge {{ task.status|lower }}">{{task.status}}</span>
             </td>
             <td>
                 <form action="{{url_for('tasks.toggle_status',task_id=task.id)}}" method="POST">
                     <button class="btn-small" type="submit">Next</button>
-
                 </form>
             </td>
         </tr>
         {% endfor %}
-    </tbody>
-</table>
+        </tbody>
+    </table>
     {% else %}
-    <p>No tasks yet.Add one above!</p>
+        <p>No tasks yet.Add one above!</p>
     {% endif %} 
 
 </div>

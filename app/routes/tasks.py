@@ -2,13 +2,14 @@ from flask import Blueprint,render_template,request,redirect,url_for,flash,sessi
 from app import db
 from app.models import Task
 
-tasks_bp=Blueprint('tasks',__name__)
+tasks_bp=Blueprint('tasks',__name__)#Here tasks is a flask's routine system 
 
 @tasks_bp.route('/')
+
 def view_tasks():
     if 'user' not in session:
         return redirect(url_for('auth.login'))
-    tasks=Task.query.all()
+    tasks=Task.query.all()#Here task is python variable name and it is not related to blueprint name
     return render_template('tasks.html',tasks=tasks)
 
 @tasks_bp.route('/add_tasks',methods=["POST"])
@@ -24,7 +25,7 @@ def add_tasks():
     
     return redirect(url_for('tasks.view_tasks'))
 
-@tasks_bp.route('/toggle/<int::task_id',methods=["POST"])
+@tasks_bp.route('/toggle/<int:task_id>',methods=["POST"])
 def toggle_status(task_id):
     task=Task.query.get(task_id)
     if task:
@@ -37,7 +38,7 @@ def toggle_status(task_id):
         db.session.commit()
     return redirect(url_for('tasks.view_tasks'))
 
-@tasks_bp.route('/clear',methods="POST")
+@tasks_bp.route('/clear_tasks',methods=["POST"])
 def clear_tasks():
     Task.query.delete()
     db.session.commit()
