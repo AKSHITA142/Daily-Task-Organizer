@@ -1,5 +1,5 @@
 
-first rename this html file and then run
+first rename base.html file and then run
 
 db = Database Manager (knows how to talk to the .db file)
 first rename this html files and then run
