@@ -1,2 +1,11 @@
+first rename this html file and then run
 
+db = Database Manager (knows how to talk to the .db file).
 
+Task = Blueprint of one table.
+
+Because Task inherits from db.Model, they are automatically connected.
+
+db.Model is the special parent class provided by Flask-SQLAlchemy that makes your Python class work as a database table.
+
+#Next Work->Modification in perticular Task

@@ -10,7 +10,7 @@ def view_tasks():
     if 'user' not in session:
         return redirect(url_for('auth.login'))
     tasks=Task.query.all()#Here task is python variable name and it is not related to blueprint name
-    return render_template('tasks.html',tasks=tasks)
+    return render_template('tasks.html',tasks=tasks)#Hre tasks is list of Task object
 
 @tasks_bp.route('/add_tasks',methods=["POST"])
 def add_tasks():
@@ -44,3 +44,20 @@ def clear_tasks():
     db.session.commit()
     flash('All tasks Cleared!','info')
     return redirect(url_for('tasks.view_tasks'))    
+
+@tasks_bp.route('/update/<int:task_id>', methods=["POST"])
+def update_task(task_id):
+    task = Task.query.get(task_id)
+    if task:
+        task.title = request.form.get('title')              # user's new input
+        db.session.commit()
+        flash('Task updated successfully!', 'success')
+    return redirect(url_for('tasks.view_tasks'))
+
+@tasks_bp.route('/delete/<int:task_id>')
+def delete_task(task_id):
+    deleted_task=Task.query.get(task_id)
+    if deleted_task:
+        db.session.delete(deleted_task)
+        db.session.commit()
+    return redirect(url_for('tasks.view_tasks'))

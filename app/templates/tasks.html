@@ -17,9 +17,10 @@
         <table class="task-table">
             <thead>
                 <tr>
-                    <th>Task</th>
+                    <th>Index</th>
+                    <th>My Tasks</th>
                     <th>Status</th>
-                    <th>Change</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
         <tbody>
@@ -36,6 +37,20 @@
                     <button class="btn-small" type="submit">Next</button>
                 </form>
             </td>
+            <td>
+                <form action="{{url_for('tasks.delete_task',task_id=task.id)}}">
+                    <button class="btn-small" type="submit">Delete</button>
+                </form>
+            </td>
+            <td>
+            <button type="button" class="btn btn-update" onclick="showEditBox({{ task.id }})">Modify</button>
+
+            <!-- Hidden form (appears only when Modify is clicked) -->
+            <form id="edit-form-{{ task.id }}" action="{{ url_for('tasks.update_task', task_id=task.id) }}" method="POST" style="display:none; margin-top:5px;">
+                <input type="text" name="title" value="{{ task.title }}">
+                <button type="submit" class="btn btn-save">Save</button>
+            </form>
+            </td>
         </tr>
         {% endfor %}
         </tbody>
@@ -45,4 +60,5 @@
     {% endif %} 
 
 </div>
+<script src="{{ url_for('static', filename='js/tasks.js') }}"></script>
 {% endblock %}
